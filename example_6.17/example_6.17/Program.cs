@@ -13,7 +13,7 @@ namespace example_6._17
         public string FirstName;
         public string CityOfBirth;
 
-        public string this[int index]
+        public string this[int index] //declare indexer
         {
             set
             {
@@ -39,7 +39,7 @@ namespace example_6._17
                     case 2: return CityOfBirth;
 
                     default:
-                        throw  new ArgumentOutOfRangeException("index");
+                        throw new ArgumentOutOfRangeException("index");
                 }
             }
         }
@@ -56,7 +56,7 @@ namespace example_6._17
             emp1[2] = "Dallas";
             Console.WriteLine("{0}", emp1[0]);
             Console.WriteLine("{0}", emp1[1]);
-            Console.WriteLine("{0}",emp1[2]);
+            Console.WriteLine("{0}", emp1[2]);
         }
     }
 }
