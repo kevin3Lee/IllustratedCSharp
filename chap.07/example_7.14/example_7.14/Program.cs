@@ -27,7 +27,7 @@ namespace example_7._14
     //
     static class ExtendMyData
     {
-        public  static double Average(MyData md)
+        public static double Average(this MyData md)
         {
             return md.Sum() / 3;
         }
