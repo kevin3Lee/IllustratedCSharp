@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace example_7._14
+namespace ExtensionMethods
 {   // extended method
-    class MyData
+    sealed class MyData
     {
         private double D1; // field
         private double D2;
@@ -38,7 +38,8 @@ namespace example_7._14
         static void Main(string[] args)
         {
             MyData md = new MyData(3, 4, 5); // constrction function
-            Console.WriteLine("Average: {0}", ExtendMyData.Average(md));
+            Console.WriteLine("Sum: {0}", md.Sum());
+            Console.WriteLine("Average: {0}", md.Average());  
         }
     }
 }
