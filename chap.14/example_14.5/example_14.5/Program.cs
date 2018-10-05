@@ -28,11 +28,11 @@ namespace example_14._5
     //
     class S_Dozens
     {
-        public int S_DozensCount { get; private set; } // define S_DozensCount as a int counter.
+        public int Sp_DozensCount { get; private set; } // define S_DozensCount as a int counter.
 
         public S_Dozens(P_Incrementer p_incrementer) // construct function and define a instance method
         {
-            S_DozensCount = 0; // define and init
+            Sp_DozensCount = 0; // define and init
 
             // RECEIVE the EVENT : P_evt_CountedADozen and revoke the counter!
             p_incrementer.P_evt_CountedADozen += S_IncrementDozensCount; 
@@ -40,7 +40,7 @@ namespace example_14._5
 
         void S_IncrementDozensCount()
         {
-            S_DozensCount++; // int counter
+            Sp_DozensCount++; // int counter
         }
     }
 
@@ -49,11 +49,11 @@ namespace example_14._5
     {
         static void Main(string[] args)
         {
-            P_Incrementer incrementer = new P_Incrementer();
-            S_Dozens s_dozensCount = new S_Dozens(incrementer);
+            P_Incrementer p_incrementer = new P_Incrementer();
+            S_Dozens s_dozensCount = new S_Dozens(p_incrementer);
 
-            incrementer.P_m_DoCount();
-            Console.WriteLine("Number of dozens  = {0}", s_dozensCount.S_DozensCount);
+            p_incrementer.P_m_DoCount();
+            Console.WriteLine("Number of dozens  = {0}", s_dozensCount.Sp_DozensCount);
         }
     }
 }
