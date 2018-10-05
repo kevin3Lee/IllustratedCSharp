@@ -10,19 +10,25 @@ namespace example_13._1
 
     class Program
     {
-        // define methods
-        void PrintLow(int value)
+        //
+        class MyClass
         {
-            Console.WriteLine("{0} - Low Value", value);
+            //
+            // define methods
+            public void PrintLow(int value)
+            {
+                Console.WriteLine("{0} - Low Value", value);
+            }
+            public void PrintHigh(int value)
+            {
+                Console.WriteLine("{0} - High Value", value);
+            }
         }
-        void PrintHigh(int value)
-        {
-            Console.WriteLine("{0} - High Value", value);
-        }
+        
         // Main func
         static void Main(string[] args)
         {
-            Program program = new Program(); // ?
+            MyClass mc = new MyClass(); // ?
             MyDel del; //decalre delegate **variable**.
             //
             Random rand = new Random();
@@ -30,8 +36,8 @@ namespace example_13._1
             
             // set a del obj include methods
             del = randomValue < 50 // create a delegate **object**.
-                ? new MyDel(program.PrintLow)
-                : new MyDel(program.PrintHigh);
+                ? new MyDel(mc.PrintLow)
+                : new MyDel(mc.PrintHigh);
 
             del(randomValue); // execute the delegate object.
 
